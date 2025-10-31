@@ -1,0 +1,255 @@
+/* === HEADER TOP BAR === */
+.wm-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.wm-header-inner {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === MENU BUTTON === */
+.wm-menu-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #11382f; /* W&M Green */
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  min-width: 180px;
+  border-radius: 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.wm-menu-btn:hover {
+  background-color: #0d332d; /* Darker green */
+  transform: translateY(-1px);
+}
+
+.menu-text {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
+.menu-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu-mag {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin-left: 0.5rem;
+}
+
+/* === SLIDE-OUT NAVIGATION === */
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  transition: right 0.4s ease;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.side-nav.open {
+  right: 0;
+}
+
+/* === LEFT PANEL === */
+.side-nav-left {
+  width: 280px;
+  background: linear-gradient(180deg, #0d332d 0%, #11382f 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem 0 2rem;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.resources-list {
+  width: 80%;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 1.2rem;
+}
+
+.resources-list h4 {
+  color: #f0b323;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.resources-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resources-list li {
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.resources-list li:hover {
+  color: #b9975b;
+}
+
+/* === RIGHT PANEL === */
+.side-nav-right {
+  flex: 1;
+  background-color: #fff;
+  padding: 4rem 6rem 3rem 4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+
+/* Make right panel proportional */
+@media (min-width: 1200px) {
+  .side-nav-right {
+    max-width: 72%;
+  }
+}
+
+/* === CLOSE BUTTON === */
+.close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #115740;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* === LINKS COLUMN === */
+.side-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin-top: 4rem;
+  padding-left: 2rem;
+  border-left: 3px solid #f0b323; /* W&M Gold */
+  max-width: 700px;
+}
+
+.side-links a {
+  font-size: 1.55rem;
+  color: #115740;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.side-links a:hover {
+  color: #b9975b;
+  transform: translateX(6px);
+}
+
+/* === BOTTOM LOGO === */
+.side-bottom {
+  text-align: right;
+  padding-right: 1.2rem;
+  margin-top: 3rem;
+}
+
+.side-bottom img {
+  opacity: 0.85;
+  width: 200px;
+  transition: opacity 0.3s ease;
+}
+
+.side-bottom img:hover {
+  opacity: 1;
+}
+
+/* === OVERLAY === */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 992px) {
+  .side-nav-right {
+    padding: 2rem 2.5rem;
+    max-width: 100%;
+  }
+
+  .side-links {
+    padding-left: 1rem;
+    border-left: 2px solid #f0b323;
+  }
+
+  .side-links a {
+    font-size: 1.3rem;
+  }
+
+  .side-nav-left {
+    display: none;
+  }
+
+  .menu-mag {
+    width: 30px;
+    height: 30px;
+  }
+
+  .wm-menu-btn {
+    min-width: 140px;
+    padding: 0.7rem 1rem;
+  }
+}

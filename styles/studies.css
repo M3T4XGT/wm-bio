@@ -1,0 +1,153 @@
+/* === General Section Layout === */
+.studies-section {
+  width: 100%;
+  background-color: #f8f9f7;
+  overflow: hidden;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* === Base Block Layout (50/50 split) === */
+.study-block {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+}
+
+/* === Common Image Style === */
+.study-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.study-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* === Common Text Style === */
+.study-text {
+  position: relative;
+  width: 50%;
+  background-color: #f8f9f7;
+  padding: 6rem 6%;
+  box-sizing: border-box;
+}
+
+.study-heading {
+  font-size: 3rem; /* Increased from 2.4rem */
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.study-subheading {
+  font-size: 1.4rem; /* Increased from 1.1rem */
+  color: #115740;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.study-description {
+  font-size: 1.15rem; /* Increased from 1.05rem */
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 2.5rem;
+  max-width: 640px;
+}
+
+/* === Button (Solid Green → W&M Gold underline) === */
+.study-btn {
+  background-color: #115740;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem; /* Increased for emphasis */
+  text-transform: uppercase;
+  padding: 1.1rem 2.6rem;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.6px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.study-btn::after {
+  content: "";
+  display: block;
+  height: 6px;
+  background-color: #b9975b; /* W&M Gold */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.study-btn:hover {
+  background-color: #0e4635; /* Slightly darker W&M Green */
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* === Image Alignment (Left or Right) === */
+.left-image .study-image {
+  left: 0;
+}
+.left-image .study-text {
+  margin-left: 50%;
+}
+
+.right-image .study-image {
+  right: 0;
+}
+.right-image .study-text {
+  margin-right: 50%;
+  text-align: left;
+}
+
+/* === Responsive Layout === */
+@media (max-width: 992px) {
+  .study-block {
+    flex-direction: column;
+  }
+
+  .study-image {
+    position: relative;
+    width: 100%;
+    height: 340px;
+  }
+
+  .study-text {
+    width: 100%;
+    margin: 0;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .study-heading {
+    font-size: 2.3rem;
+  }
+
+  .study-subheading {
+    font-size: 1.2rem;
+  }
+
+  .study-description {
+    font-size: 1rem;
+  }
+
+  .study-btn {
+    margin: 0 auto;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+}

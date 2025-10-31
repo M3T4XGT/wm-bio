@@ -1,0 +1,261 @@
+/* === William & Mary Footer (Desktop-Only Final Scrollable Layout) === */
+.wm-footer {
+  background-color: #002d27;
+  color: #fff;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  width: 100%;
+  position: relative; /* allow scroll flow */
+  z-index: 100;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 0; /* reset any unwanted spacing */
+}
+
+/* 🚫 REMOVE padding-bottom on body — not needed anymore */
+
+/* === Top Section === */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 3rem 8%;
+  background: linear-gradient(to bottom, #001f1a 0%, #0f3b31 50%, #115740 100%);
+  gap: 2rem;
+}
+
+/* === Left Column === */
+.footer-left {
+  flex: 1;
+  min-width: 320px;
+}
+
+.college-title {
+  color: #F0B323;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.left-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.wm-square-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.dept-info {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-top: 0.3rem;
+}
+
+.dept-info p {
+  margin: 0.2rem 0;
+}
+
+.dept-info a {
+  color: #F0B323;
+  text-decoration: none;
+}
+
+.dept-info a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* === Center Column === */
+.footer-center {
+  flex: 1.6;
+  min-width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-columns h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #F0B323;
+  margin-bottom: 0.8rem;
+}
+
+.footer-columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-columns li {
+  margin: 0.3rem 0;
+}
+
+.footer-columns a {
+  color: #fff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-columns a:hover {
+  color: #F0B323;
+  text-decoration: underline;
+}
+
+/* === Right Column === */
+.footer-right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-right h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #F0B323;
+  margin-bottom: 1rem;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #F0B323;
+  text-decoration: underline;
+}
+
+/* === Social Icons === */
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  background: #fff;
+  color: #002d27;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #F0B323;
+  transform: translateY(-3px);
+}
+
+/* === Bottom Section === */
+.footer-bottom {
+  background-color: #002d27;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1.2rem 8% 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  gap: 1rem;
+}
+
+/* Left Block */
+.footer-left-block {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.arrow-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: #F0B323;
+}
+
+.wm-bottom-logo {
+  width: 120px;
+  height: auto;
+}
+
+.wm-subtitle {
+  color: #F0B323;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  letter-spacing: 0.4px;
+}
+
+/* Right Block */
+.footer-right-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0.4rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Top Links */
+.top-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.top-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.top-links a:hover {
+  color: #F0B323;
+  text-decoration: underline;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #d0d3d4;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #F0B323;
+  text-decoration: underline;
+}

@@ -1,0 +1,104 @@
+/* === Join Us Section (W&M Green Theme) === */
+.join-us-section {
+  background-color: #115740; /* William & Mary Green */
+  padding: 6rem 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #ffffff;
+}
+
+/* === Main Container === */
+.join-us-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* === Left Text Column === */
+.join-text {
+  flex: 1;
+  min-width: 320px;
+  color: #ffffff;
+}
+
+.join-heading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.join-description {
+  font-size: 1.05rem;
+  color: #f1f1f1;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+/* === Button (Green Theme + Gold Accent) === */
+.join-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-left: 10px solid #f0b323; /* Gold stripe */
+  transition: all 0.3s ease;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.join-btn:hover {
+  background-color: #f0b323; /* Gold background */
+  color: #115740; /* Green text */
+  border-left: 10px solid #ffffff;
+  transform: translateY(-2px);
+}
+
+/* === Right Image Column === */
+.join-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+}
+
+.lab-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 3px solid #f0b323;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 992px) {
+  .join-us-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .join-text {
+    max-width: 700px;
+  }
+
+  .join-btn {
+    margin: 0 auto;
+  }
+
+  .lab-img {
+    width: 90%;
+  }
+}
