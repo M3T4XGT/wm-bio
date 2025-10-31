@@ -10,10 +10,11 @@
 .study-block {
   position: relative;
   width: 100%;
-  height: auto;
   min-height: 520px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 /* === Common Image Style === */
@@ -25,6 +26,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: all 0.3s ease;
 }
 
 .study-img {
@@ -40,10 +42,11 @@
   background-color: #f8f9f7;
   padding: 6rem 6%;
   box-sizing: border-box;
+  z-index: 2;
 }
 
 .study-heading {
-  font-size: 3rem; /* Increased from 2.4rem */
+  font-size: 3rem;
   font-weight: 800;
   color: #333;
   margin-bottom: 0.8rem;
@@ -51,26 +54,26 @@
 }
 
 .study-subheading {
-  font-size: 1.4rem; /* Increased from 1.1rem */
+  font-size: 1.4rem;
   color: #115740;
   font-weight: 700;
   margin-bottom: 1.6rem;
 }
 
 .study-description {
-  font-size: 1.15rem; /* Increased from 1.05rem */
+  font-size: 1.15rem;
   line-height: 1.8;
   color: #333;
   margin-bottom: 2.5rem;
   max-width: 640px;
 }
 
-/* === Button (Solid Green → W&M Gold underline) === */
+/* === Button (W&M Green + Gold underline) === */
 .study-btn {
   background-color: #115740;
   color: #ffffff;
   font-weight: 800;
-  font-size: 1.1rem; /* Increased for emphasis */
+  font-size: 1.1rem;
   text-transform: uppercase;
   padding: 1.1rem 2.6rem;
   text-decoration: none;
@@ -80,25 +83,22 @@
   transition: all 0.3s ease;
   border: none;
 }
-
 .study-btn::after {
   content: "";
   display: block;
   height: 6px;
-  background-color: #b9975b; /* W&M Gold */
+  background-color: #b9975b;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
 }
-
 .study-btn:hover {
-  background-color: #0e4635; /* Slightly darker W&M Green */
-  color: #ffffff;
+  background-color: #0e4635;
   transform: translateY(-3px);
 }
 
-/* === Image Alignment (Left or Right) === */
+/* === Image Alignment (Left / Right Alternation) === */
 .left-image .study-image {
   left: 0;
 }
@@ -114,27 +114,35 @@
   text-align: left;
 }
 
-/* === Responsive Layout === */
+/* ====================================================== */
+/* === Responsive Layout Adjustments ==================== */
+/* ====================================================== */
+
+/* Tablets */
 @media (max-width: 992px) {
   .study-block {
     flex-direction: column;
+    min-height: auto;
   }
 
   .study-image {
     position: relative;
     width: 100%;
     height: 340px;
+    order: 1;
   }
 
   .study-text {
     width: 100%;
     margin: 0;
-    padding: 3rem 2rem;
+    padding: 3.5rem 2rem;
     text-align: center;
+    order: 2;
   }
 
   .study-heading {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
   }
 
   .study-subheading {
@@ -143,11 +151,51 @@
 
   .study-description {
     font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
   }
 
   .study-btn {
     margin: 0 auto;
     font-size: 1rem;
     padding: 1rem 2rem;
+  }
+
+  /* Optional: slight fade overlay for readability */
+  .study-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  .study-image {
+    height: 260px;
+  }
+
+  .study-text {
+    padding: 2.5rem 1.2rem;
+  }
+
+  .study-heading {
+    font-size: 1.9rem;
+  }
+
+  .study-subheading {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .study-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .study-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.6rem;
   }
 }

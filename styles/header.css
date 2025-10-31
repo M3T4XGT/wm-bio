@@ -38,9 +38,8 @@
   border-radius: 0;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 .wm-menu-btn:hover {
-  background-color: #0d332d; /* Darker green */
+  background-color: #0d332d;
   transform: translateY(-1px);
 }
 
@@ -57,7 +56,6 @@
 }
 
 .menu-mag {
-  display: block;
   width: 36px;
   height: 36px;
   margin-left: 0.5rem;
@@ -75,7 +73,6 @@
   z-index: 999;
   overflow: hidden;
 }
-
 .side-nav.open {
   right: 0;
 }
@@ -99,7 +96,6 @@
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   padding-top: 1.2rem;
 }
-
 .resources-list h4 {
   color: #f0b323;
   font-size: 0.85rem;
@@ -107,20 +103,12 @@
   letter-spacing: 0.5px;
   margin-bottom: 1rem;
 }
-
-.resources-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .resources-list li {
   margin-bottom: 0.7rem;
   font-size: 0.95rem;
   cursor: pointer;
   transition: color 0.25s ease;
 }
-
 .resources-list li:hover {
   color: #b9975b;
 }
@@ -130,15 +118,14 @@
   flex: 1;
   background-color: #fff;
   padding: 4rem 6rem 3rem 4rem;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-left: 1px solid #e6e6e6;
   box-sizing: border-box;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
-
-/* Make right panel proportional */
 @media (min-width: 1200px) {
   .side-nav-right {
     max-width: 72%;
@@ -158,7 +145,6 @@
   font-weight: 600;
   transition: transform 0.2s ease;
 }
-
 .close-btn:hover {
   transform: rotate(90deg);
 }
@@ -170,10 +156,9 @@
   gap: 1.3rem;
   margin-top: 4rem;
   padding-left: 2rem;
-  border-left: 3px solid #f0b323; /* W&M Gold */
+  border-left: 3px solid #f0b323;
   max-width: 700px;
 }
-
 .side-links a {
   font-size: 1.55rem;
   color: #115740;
@@ -182,7 +167,6 @@
   line-height: 1.4;
   transition: color 0.25s ease, transform 0.25s ease;
 }
-
 .side-links a:hover {
   color: #b9975b;
   transform: translateX(6px);
@@ -194,13 +178,11 @@
   padding-right: 1.2rem;
   margin-top: 3rem;
 }
-
 .side-bottom img {
   opacity: 0.85;
   width: 200px;
   transition: opacity 0.3s ease;
 }
-
 .side-bottom img:hover {
   opacity: 1;
 }
@@ -213,18 +195,32 @@
   z-index: 998;
   animation: fadeIn 0.4s ease;
 }
-
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* === RESPONSIVE ADJUSTMENTS === */
+/* ======================================================= */
+/* === RESPONSIVE ADJUSTMENTS ============================ */
+/* ======================================================= */
+
+/* Tablets */
 @media (max-width: 992px) {
+  .wm-header {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .wm-menu-btn {
+    min-width: 150px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .menu-mag {
+    width: 30px;
+    height: 30px;
+  }
+
   .side-nav-right {
     padding: 2rem 2.5rem;
     max-width: 100%;
@@ -236,20 +232,62 @@
   }
 
   .side-links a {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 
   .side-nav-left {
     display: none;
   }
+}
 
-  .menu-mag {
-    width: 30px;
-    height: 30px;
+/* Mobile Phones */
+@media (max-width: 600px) {
+  .wm-header {
+    padding: 0.5rem 1rem;
   }
 
   .wm-menu-btn {
-    min-width: 140px;
-    padding: 0.7rem 1rem;
+    min-width: 120px;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .menu-text {
+    font-size: 0.85rem;
+  }
+
+  .side-nav {
+    flex-direction: column;
+  }
+
+  .side-nav-right {
+    padding: 2.5rem 1.5rem;
+    overflow-y: auto;
+    text-align: left;
+  }
+
+  .side-links {
+    padding-left: 0.8rem;
+    border-left: 2px solid #f0b323;
+    gap: 1rem;
+  }
+
+  .side-links a {
+    font-size: 1.2rem;
+  }
+
+  .close-btn {
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.7rem;
+  }
+
+  .side-bottom {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .side-bottom img {
+    width: 150px;
   }
 }

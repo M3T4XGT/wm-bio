@@ -2,26 +2,27 @@
 .scholarships-section {
   position: relative;
   width: 100%;
-  height: auto;
-  min-height: 520px;
   background-color: #f8f9f7;
   font-family: "Segoe UI", Roboto, sans-serif;
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  min-height: 520px;
 }
 
-/* === Full-width Image on the Left (flush to edge) === */
+/* === Left Image Half === */
 .scholarship-image {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   width: 50%;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
-/* When using <Image /> component */
 .scholar-img {
   position: absolute;
   top: 0;
@@ -42,10 +43,13 @@
   padding: 6rem 6%;
   color: #333;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .scholarship-heading {
-  font-size: 3rem; /* increased from 2.5rem */
+  font-size: 3rem;
   font-weight: 800;
   color: #333;
   margin-bottom: 0.8rem;
@@ -53,28 +57,28 @@
 }
 
 .scholarship-subheading {
-  font-size: 1.4rem; /* increased from 1.2rem */
+  font-size: 1.4rem;
   color: #115740;
   font-weight: 700;
   margin-bottom: 1.6rem;
 }
 
 .scholarship-description {
-  font-size: 1.15rem; /* increased from 1.05rem */
+  font-size: 1.15rem;
   line-height: 1.8;
   color: #333;
   margin-bottom: 2.5rem;
   max-width: 640px;
 }
 
-/* === Button (Solid Green + Gold underline) === */
+/* === CTA Button === */
 .scholarship-btn {
-  background-color: #115740; /* W&M Green */
+  background-color: #115740;
   color: #ffffff;
   font-weight: 800;
-  font-size: 1.1rem; /* increased from 1rem */
+  font-size: 1.1rem;
   text-transform: uppercase;
-  padding: 1.1rem 2.6rem; /* increased slightly for better proportion */
+  padding: 1.1rem 2.6rem;
   text-decoration: none;
   display: inline-block;
   letter-spacing: 0.6px;
@@ -82,42 +86,49 @@
   transition: all 0.3s ease;
   border: none;
 }
-
 .scholarship-btn::after {
   content: "";
   display: block;
-  height: 6px; /* increased underline thickness */
-  background-color: #b9975b; /* W&M Gold */
+  height: 6px;
+  background-color: #b9975b;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
 }
-
 .scholarship-btn:hover {
-  background-color: #0e4635; /* darker green hover */
-  color: #ffffff;
+  background-color: #0e4635;
   transform: translateY(-3px);
 }
 
-/* === Responsive: stack image + text === */
+/* ========================================================= */
+/* === RESPONSIVE DESIGN =================================== */
+/* ========================================================= */
+
+/* Tablets */
 @media (max-width: 992px) {
+  .scholarships-section {
+    flex-direction: column;
+  }
+
   .scholarship-image,
   .scholar-img {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 300px;
   }
 
   .scholarship-text {
     margin-left: 0;
     width: 100%;
-    padding: 3rem 2rem;
+    padding: 3.5rem 2rem;
     text-align: center;
+    align-items: center;
   }
 
   .scholarship-heading {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
   }
 
   .scholarship-subheading {
@@ -126,11 +137,45 @@
 
   .scholarship-description {
     font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    max-width: 90%;
   }
 
   .scholarship-btn {
     margin: 0 auto;
     font-size: 1rem;
     padding: 1rem 2rem;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  .scholarship-image,
+  .scholar-img {
+    height: 240px;
+  }
+
+  .scholarship-text {
+    padding: 2.5rem 1.2rem;
+  }
+
+  .scholarship-heading {
+    font-size: 1.9rem;
+  }
+
+  .scholarship-subheading {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .scholarship-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .scholarship-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.6rem;
   }
 }

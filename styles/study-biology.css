@@ -2,10 +2,10 @@
 .study-biology-section {
   position: relative;
   width: 100%;
-  height: auto;
   min-height: 520px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-family: "Segoe UI", Roboto, sans-serif;
   background-color: #f8f9f7;
   overflow: hidden;
@@ -21,9 +21,9 @@
 }
 
 .study-bio-heading {
-  font-size: 3.2rem; /* Large, prominent heading */
+  font-size: 3.2rem;
   font-weight: 800;
-  color: #115740; /* W&M Green */
+  color: #115740;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
@@ -38,7 +38,7 @@
 
 /* === Solid Green Button === */
 .study-bio-btn {
-  background-color: #115740; /* W&M Green */
+  background-color: #115740;
   color: #ffffff;
   font-weight: 800;
   font-size: 1.1rem;
@@ -50,9 +50,8 @@
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-
 .study-bio-btn:hover {
-  background-color: #0e4635; /* Slightly darker W&M Green on hover */
+  background-color: #0e4635;
   transform: translateY(-3px);
 }
 
@@ -64,25 +63,30 @@
   bottom: 0;
   width: 50%;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
 }
-
 .bio-img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-/* === Responsive Layout === */
+/* ====================================================== */
+/* === Responsive Layout Adjustments ==================== */
+/* ====================================================== */
+
+/* Tablets */
 @media (max-width: 992px) {
   .study-biology-section {
     flex-direction: column-reverse;
+    min-height: auto;
   }
 
   .study-bio-text {
     width: 100%;
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 3.5rem 2rem;
+    background-color: #f8f9f7;
   }
 
   .study-bio-image {
@@ -93,15 +97,52 @@
 
   .study-bio-heading {
     font-size: 2.4rem;
+    margin-bottom: 1rem;
   }
 
   .study-bio-description {
     font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
   }
 
   .study-bio-btn {
     font-size: 1rem;
     padding: 1rem 2.2rem;
     margin: 0 auto;
+  }
+
+  /* Optional readability overlay */
+  .study-bio-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%);
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  .study-bio-image {
+    height: 260px;
+  }
+
+  .study-bio-text {
+    padding: 2.5rem 1.2rem;
+  }
+
+  .study-bio-heading {
+    font-size: 2rem;
+  }
+
+  .study-bio-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+  }
+
+  .study-bio-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.6rem;
   }
 }

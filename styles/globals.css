@@ -1,15 +1,105 @@
+/* === External Imports First === */
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/* === Tailwind Directives === */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "@fortawesome/fontawesome-free/css/all.min.css";
 
-
-
+/* === Base Global Reset & Layout === */
+html,
 body {
-  background-color: #fff; 
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
+  height: 100%;
   min-height: 100vh;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #002d27; /* W&M dark green text tone */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Body Flex Layout === */
+body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+/* === Main Content Wrapper === */
+main {
+  flex: 1 0 auto;
+}
+
+/* === Footer === */
+footer {
+  flex-shrink: 0;
+}
+
+/* === Link Defaults === */
+a {
+  text-decoration: none;
+  color: #115740;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #F0B323;
+}
+
+/* === Typography Defaults === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #002d27;
+  line-height: 1.25;
+}
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* === Utility: Consistent box sizing === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* === Tailwind Custom Extensions (Turbopack-Safe) === */
+@layer base {
+  /* Headings */
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  @screen md {
+    h1 {
+      @apply text-5xl;
+    }
+  }
+
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+  @screen md {
+    h2 {
+      @apply text-4xl;
+    }
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  /* Paragraphs */
+  p {
+    @apply text-base leading-relaxed;
+  }
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
 }

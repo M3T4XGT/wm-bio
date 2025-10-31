@@ -86,12 +86,14 @@ export default function Header() {
           </nav>
 
           <div className="side-bottom">
-            <Image
-              src="/wm_horizontal_single_line_black.svg"
-              alt="W&M Line Logo"
-              width={200}
-              height={60}
-            />
+            <Image 
+  src="/wm_horizontal_single_line_black.png"
+  alt="W&M logo"
+  width={200}
+  height={60}
+  priority
+/>
+
           </div>
         </div>
       </aside>
